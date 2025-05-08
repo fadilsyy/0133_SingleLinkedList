@@ -91,6 +91,9 @@ public:
         return true;
     }
 
-
+    void traverse()
+    {
+        
+    }
     
 };
