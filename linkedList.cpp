@@ -99,7 +99,7 @@ public:
         }
         else
         {
-            cout << "\nData di dalam lisy adalah:\n";
+            cout << "\nData di dalam list adalah:\n";
             Node *currentNode = START;
             while (currentNode != NULL)
             {
@@ -115,7 +115,8 @@ int main()
 {
     List mhs;
     int nim;
-    char ch;
+    int ch;
+
     while (1)
     {
         cout
@@ -128,8 +129,43 @@ int main()
         cout << "5. Keluar" << endl;
         cout
             << "Masukkan pilihan (1-5): " << endl;
-        cin >> ch;
-            
+        cin >> ch;    
+
+        switch (ch)
+        {
+        case 1:
+            mhs.addNode();
+            break;
+        case 2:
+            cout << "\nMasukkan Nomor Mahasiswa yang akan dihapus: ";
+            cin >> nim;
+            if (mhs.delNode(nim))
+                cout << "\nData berhasil dihapus." << endl;
+            else
+                cout << "\nData tidak ditemukan." << endl;
+            break;
+        case 3:
+            mhs.traverse();
+            break;
+        case 4:
+        {
+            cout << "\nMasukkan Nomor Mahasiswa yang dicari: ";
+            cin >> nim;
+            Node *previous, *current;
+            if (mhs.Search(nim, &previous, &current))
+                cout << "\nData ditemukan: " << current->noMhs << endl;
+            else
+                cout << "\nData tidak ditemukan." << endl;
+            break;
+        }
+        case 5:
+        {
+            cout << "Terima Kasih." << endl;
+            return 0;
+        }
+        default:
+            cout << "\nPilihan tidak valid. Silakan masukkan angka antara 1 dan 5." << endl;
+        }
     }
     
 }
