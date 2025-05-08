@@ -117,7 +117,7 @@ int main()
     int nim;
     char ch;
 
-    while (1)
+    do
     {
         cout
             << "Menu" << endl;
