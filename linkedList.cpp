@@ -115,7 +115,7 @@ int main()
 {
     List mhs;
     int nim;
-    int ch;
+    char ch;
 
     while (1)
     {
